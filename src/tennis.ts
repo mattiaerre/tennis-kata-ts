@@ -1,17 +1,17 @@
-export type Player = "player1" | "player2";
+export type Player = 'player1' | 'player2';
 
 const pointsToName = (p: number): string => {
   switch (p) {
     case 0:
-      return "Love";
+      return 'Love';
     case 1:
-      return "Fifteen";
+      return 'Fifteen';
     case 2:
-      return "Thirty";
+      return 'Thirty';
     case 3:
-      return "Forty";
+      return 'Forty';
     default:
-      return "";
+      return '';
   }
 };
 
@@ -21,23 +21,23 @@ export class TennisGame {
 
   score(): string {
     if (this.p1 === this.p2) {
-      if (this.p1 >= 3) return "Deuce";
+      if (this.p1 >= 3) return 'Deuce';
       return `${pointsToName(this.p1)}-All`;
     }
 
     if (this.p1 >= 4 || this.p2 >= 4) {
       const diff = this.p1 - this.p2;
-      if (diff === 1) return "Advantage player1";
-      if (diff === -1) return "Advantage player2";
-      if (diff >= 2) return "Win for player1";
-      return "Win for player2";
+      if (diff === 1) return 'Advantage player1';
+      if (diff === -1) return 'Advantage player2';
+      if (diff >= 2) return 'Win for player1';
+      return 'Win for player2';
     }
 
     return `${pointsToName(this.p1)}-${pointsToName(this.p2)}`;
   }
 
   wonPoint(player: Player): void {
-    if (player === "player1") this.p1 += 1;
+    if (player === 'player1') this.p1 += 1;
     else this.p2 += 1;
   }
 }
