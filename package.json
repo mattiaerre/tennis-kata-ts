@@ -4,15 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "build": "tsc -p tsconfig.json",
-    "start": "node --enable-source-maps dist/index.js",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
+    "fix": "npm run format && npm run lint:fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "fix": "npm run format && npm run lint:fix"
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "",
